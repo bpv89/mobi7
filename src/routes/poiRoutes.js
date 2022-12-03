@@ -4,6 +4,6 @@ const poicontroller = require('../controllers/poiController');
 
 const router = express.Router();
 
-router.get('/', poicontroller.poiTime);
+router.get('/', poicontroller.findAll);
 
 module.exports = router;

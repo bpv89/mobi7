@@ -1,8 +1,8 @@
 const poiService = require('../services/poiService');
 
-const poiTime = async (_req, res) => {
+const findAll = async (_req, res) => {
     try {
-        const {type, message} = await poiService.poiTime();
+        const {type, message} = await poiService.findAll();
         res.status(200).json(message);
     } catch (e) {
         console.log(e.message);
@@ -10,4 +10,4 @@ const poiTime = async (_req, res) => {
     }
 };
 
-module.exports = { poiTime };
+module.exports = { findAll };
