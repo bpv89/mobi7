@@ -11,9 +11,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER, 
       },
-    placa: {
-      type: Sequelize.STRING,
-    },
+    carId: {
+      type: Sequelize.INTEGER,
+      },
     data_posicao: {
       type: Sequelize.DATE,
     },
