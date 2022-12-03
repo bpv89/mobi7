@@ -2,6 +2,8 @@
 
 const { clear } = require('console');
 const fs = require('fs');
+const basePoints = 'base_pois_def.csv'
+const vehiclesPositions = 'posicoes.csv'
 
 const converterCSV = (arquivo) => {
     csv = fs.readFileSync(arquivo);
@@ -26,11 +28,12 @@ const converterCSV = (arquivo) => {
              else {
                 obj[headers[j]] = currentline[j]; 
             }          
-        }    
-        result.push(obj);    
+        }
+        result.push(obj);   
     }    
+           return result
+
     // return JSON.stringify(result);
-    return result
 };
 
 
@@ -52,5 +55,6 @@ function convertDatePickerTimeToMySQLTime(str) {
 
 module.exports = converterCSV;
 // console.log(converterCSV('posicoes.csv'));
+// console.log(converterCSV('base_pois_def.csv'));
 
 // console.log(convertDatePickerTimeToMySQLTime('Wed Dec 12 2018 00:04:03 GMT-0200 (Hora oficial do Brasil)'));
