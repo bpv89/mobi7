@@ -15,10 +15,6 @@ npm run debug ou npm start
 <details> <strong>Rotas Principais</strong>
 
 
-
-/time
-
-
  <details> <strong>/cars</strong>
 
 Esta rota possibilita a listagem dos veiculos armazenados e a adição de novos veículos ao banco de dados.
