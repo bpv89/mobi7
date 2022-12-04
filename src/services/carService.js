@@ -7,7 +7,7 @@ const findAll = async () => {
 
   const insertNew = async (plate) => {
     const car = await carModel.insertNew(plate);
-    return { type: null, message: `New car inserted with plate ${plate.plate} and id ${car}` };
+    return { type: null, message: `New car inserted with plate ${plate.placa} and id ${car}` };
   };
 
   module.exports = { findAll, insertNew };

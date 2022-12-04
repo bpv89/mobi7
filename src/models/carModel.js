@@ -18,10 +18,10 @@ const insertNew = async (plate) => {
 const findPlate = async (plate) => {
   const [result] = await connection.execute(
       `SELECT * FROM mobi_db.Cars
-      WHERE placa = ?`,[plate.plate]
+      WHERE placa = ?`,[plate.placa]
       );
-  if (result.length > 0) return true
-  return false
+  if (result.length > 0) return result[0].id
+  return null
               };
 
 

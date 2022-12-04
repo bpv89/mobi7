@@ -6,7 +6,7 @@ const plateValidade = require('../middlewares/plateValidation');
 const router = express.Router();
 
 router.get('/', carController.findAll);
-router.post('/newcar',plateValidade, carController.insertNew)
+router.post('/',plateValidade, carController.insertNew)
 
 
 module.exports = router;
