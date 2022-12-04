@@ -1,7 +1,7 @@
-const carModel = require('../models/carModel');
+const vehiclesPos = require('../models/vehiclesPosModel');
 
 const findAll = async () => {
-    const car = await carModel.findAll();
+    const car = await vehiclesPos.findAll();
     return { type: null, message: car };
   };
 

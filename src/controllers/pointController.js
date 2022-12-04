@@ -1,8 +1,8 @@
-const poiService = require('../services/poiService');
+const pointService = require('../services/pointService');
 
 const findAll = async (_req, res) => {
     try {
-        const {type, message} = await poiService.findAll();
+        const {type, message} = await pointService.findAll();
         res.status(200).json(message);
     } catch (e) {
         console.log(e.message);

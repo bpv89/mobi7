@@ -21,10 +21,10 @@ module.exports = {
       type: Sequelize.INTEGER,
     },
     latitude: {
-      type: Sequelize.DECIMAL(10,7),
+      type: Sequelize.DECIMAL(10,8),
     },
     longitude: {
-      type: Sequelize.DECIMAL(10,7),
+      type: Sequelize.DECIMAL(10,8),
     },
     ignicao: {
       type: Sequelize.BOOLEAN,
