@@ -7,4 +7,12 @@ const findAll = async () => {
         return result;
       };
 
-module.exports = { findAll };
+const insertNew = async (point) => {
+    const [{ insertId }] = await connection.execute(
+        'INSERT INTO mobi_db.Points (nome, raio, latitude, longitude) VALUES (?,?,?,?)',
+        [point.nome, point.raio, point.latitude, point.longitude]
+        );
+        return insertId;
+        };
+
+module.exports = { findAll, insertNew };
