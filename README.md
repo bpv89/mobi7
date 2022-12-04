@@ -1,6 +1,8 @@
-##O que esta sendo desenvolvido
+Guia de Uso
+<strong>Comandos</strong>
 
-<details> <strong>Comandos</strong>
+
+<details> 
 docker-compose up -d
 docker exec -it api bash
 npm install
@@ -12,26 +14,24 @@ npx sequelize db:seed:all
 npm run debug ou npm start
  </details>
 
-<details> <strong>Rotas Principais</strong>
-
-
-
-/time
-
-
- <details> <strong>/cars</strong>
+<strong>Rotas </strong>
+<details> 
+<strong>/cars</strong>
+ <details> 
 
 Esta rota possibilita a listagem dos veiculos armazenados e a adição de novos veículos ao banco de dados.
 
 Com o uso do POST, o unico argumento requerido é a placa do veículo, no formato: { plate: "PLACA001"}, dentro do body da requisição.
 
  </details>
- <details> <strong>/onposition</strong>
+ <strong>/onposition</strong>
+ <details> 
 
 Esta rota possibilita a listagem dos posições dos veículos armazenados, que se encontram dentro de algum dos POIs
 
  </details>
- <details> <strong>/points</strong>
+ <strong>/points</strong>
+ <details> 
 
 Esta rota possibilita a listagem dos POIs armazenados e a adição de novos POIs ao banco de dados. A adição de um novo POI automaticamente atualiza, a lista de veículos que possam estar dentro desta rota. 
 
@@ -46,7 +46,8 @@ Para o envio de novos pontos o seguinte formato deve ser seguido:
 O envio deve estar dentro do body da requisição
 
  </details>
- <details> <strong>/vehiclespos</strong>
+ <strong>/vehiclespos</strong>
+ <details> 
 
 Esta rota possibilita a listagem dos posições dos veículos armazenados bem como a adição de novas posiçoes. A adição de novas posições deve seguir o seguinte padrão, dentro do body da requisição:
 
@@ -62,7 +63,8 @@ Esta rota possibilita a listagem dos posições dos veículos armazenados bem co
 
 
  </details>
- <details> <strong>/time</strong>
+ <strong>/time</strong> 
+ <details> 
 
 Esta rota possibilita a listagem dos tempos dos veículos dentro de cada POI, ainda permitindo a filtragem por meio da data e da placa do veículo.
 <details>/
