@@ -1,25 +1,22 @@
-const vehiclesPos = require('../models/vehiclesPosModel');
-const carModel = require('../models/carModel');
-const checkPoint = require('../utilis/checkPositions');
-const pointModel = require('../models/pointModel');
-const onPositionModel = require('../models/onPositionModel')
+
+const { Cars, VehiclePos } = require('../models');
 
   const findAll = async () => {
-    const car = await vehiclesPos.findAll();
+    const car = await VehiclePos.findAll();
     return { type: null, message: car };
   };
 
   const insertNew = async (position) => {
-    const { placa, data_posicao, velocidade, latitude, longitude, ignicao } = position;
-    const carId = await carModel.findPlate({placa});
-    const newVehiclePos = { carId, data_posicao, velocidade, latitude, longitude, ignicao };
-    const car = await vehiclesPos.insertNew(newVehiclePos);
-    const points = await pointModel.findAll();
-    const checkPosition = checkPoint({...newVehiclePos, id: car }, points);
-    checkPosition.map(async (position) => await onPositionModel.insertNew(position));
-  
-
-    return { type: null, message: `Vehicle inserted on pisition ${car}` };
+    const { placa, dataPosicao, velocidade, latitude, longitude, ignicao } = position;
+    const  [vehicle] = await Cars.findAll({ where: { placa }});
+    const carId =vehicle.dataValues.id;
+    const [pos, created] = await VehiclePos.findOrCreate({ where: { dataPosicao },
+      defaults: { carId, velocidade, latitude, longitude, ignicao  }, raw: true});    
+    const { id } = pos;
+    if (created) {
+      return { type: null, message: `New car position inserted with plate ${placa} and id ${id}` };
+      };
+    return { type: null, message: `Car with plate ${placa} alredy registered on that date` };
     };
 
   module.exports = { findAll, insertNew };

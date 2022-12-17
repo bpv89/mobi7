@@ -1,6 +1,7 @@
 const carService = require('../services/carService');
 
 const findAll = async (_req, res) => {
+
     try {
         const {type, message} = await carService.findAll();
         res.status(200).json(message);
@@ -12,7 +13,7 @@ const findAll = async (_req, res) => {
 
 const insertNew = async (req, res) => {
     try {
-        const {type, message} = await carService.insertNew(req.body);
+        const {type, message} = await carService.insertNew(req.body.placa);
         res.status(200).json(message);
     } catch (e) {
         console.log(e.message);

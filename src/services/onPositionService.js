@@ -1,8 +1,13 @@
-const OnPositionModel = require('../models/onPositionModel');
+const { Cars, Points, VehiclePos } = require('../models');
+const checkposition = require('../utilis/checkPositions');
 
 const findAll = async () => {
-    const car = await OnPositionModel.findAll();
-    return { type: null, message: car };
+    const points = await Points.findAll({ raw: true });
+    const vehicleposition = await VehiclePos.findAll({ raw: true, include: [{
+      model: Cars, as: 'car', attributes: { exclude: ['id']},
+    }] });
+    const onposition = vehicleposition.map((vehicle) => checkposition(vehicle, points))
+    return { type: null, message: onposition };
   };
 
 
