@@ -4,7 +4,7 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
  
-    await queryInterface.createTable('Vehicles', { 
+    await queryInterface.createTable('VehiclesPos', { 
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,7 +12,13 @@ module.exports = {
         type: Sequelize.INTEGER, 
       },
     carId: {
+      field: 'car_id',
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
+      foreingKey: true,
+      allowNull: false,
       type: Sequelize.INTEGER,
+      references: { model: 'Cars', key: 'id'},
       },
     data_posicao: {
       type: Sequelize.DATE,
@@ -55,7 +61,7 @@ module.exports = {
 
   async down (queryInterface, Sequelize) {
 
-    await queryInterface.dropTable('Vehicles');
+    await queryInterface.dropTable('VehiclesPos');
     await queryInterface.dropTable('Points');
 
   }

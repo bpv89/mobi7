@@ -6,9 +6,8 @@ docker-compose up -d
 docker exec -it api bash
 npm install
 
-npx sequelize db:create
-npx sequelize db:migrate
-npx sequelize db:seed:all
+npm run prestart // cria a base de dados, realiza a migration e o seed do banco de dados
+npm run clear // Deruba a base de dados
 
 npm run debug ou npm start
  </details>
@@ -20,7 +19,7 @@ npm run debug ou npm start
 
 Esta rota possibilita a listagem dos veiculos armazenados e a adição de novos veículos ao banco de dados.
 
-Com o uso do POST, o unico argumento requerido é a placa do veículo, no formato: { plate: "PLACA001"}, dentro do body da requisição.
+Com o uso do POST, o unico argumento requerido é a placa do veículo, no formato: { placa: "PLACA001"}, dentro do body da requisição.
 
  </details>
  <strong>/onposition</strong>
@@ -52,7 +51,7 @@ Esta rota possibilita a listagem dos posições dos veículos armazenados bem co
 
 {
   "placa": "TESTE003",
-  "data_posicao": "2018-12-12 02:04:03",
+  "data_posicao": "2018-12-12 02:04:03.000Z",
   "velocidade": 0,
   "latitude": "-25.36491410",
   "longitude": "-51.46989100",
