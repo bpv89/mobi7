@@ -25,7 +25,7 @@ Com o uso do POST, o unico argumento requerido é a placa do veículo, no format
  <strong>/onposition</strong>
  <details> 
 
-Esta rota possibilita a listagem dos posições dos veículos armazenados, que se encontram dentro de algum dos POIs
+Esta rota possibilita a listagem dos posições dos veículos armazenados, que se encontram dentro dos POIs
 
  </details>
  <strong>/points</strong>

@@ -13,7 +13,7 @@ const converterCSV = (arquivo) => {
     const result = [];    
     const headers=myarray[0].split(",");
     
-    for(let i=1;i<myarray.length-1;i++){
+    for(let i=1;i<myarray.length;i++){
     
         const obj = {};
         const currentline=myarray[i].split(",");
@@ -25,11 +25,13 @@ const converterCSV = (arquivo) => {
             else if (headers[j] === 'ignicao') {
                 obj.ignicao = (currentline === 'true');
             }
-             else {
+            else {
                 obj[headers[j]] = currentline[j]; 
             }          
         }
-        result.push(obj);   
+        if (obj[headers[0]] !== "" ) {
+            result.push(obj);   
+        }
     }    
            return result
 

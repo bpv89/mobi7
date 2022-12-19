@@ -6,8 +6,9 @@ const findAll = async () => {
     const vehicleposition = await VehiclePos.findAll({ raw: true, include: [{
       model: Cars, as: 'car', attributes: { exclude: ['id']},
     }] });
-    const onposition = vehicleposition.map((vehicle) => checkposition(vehicle, points))
-    return { type: null, message: onposition };
+    const onposition = vehicleposition.map((vehicle) => checkposition(vehicle, points)[0]);
+    const filter = onposition.filter((ele) => typeof ele === 'object');
+    return { type: null, message: filter };
   };
 
 
