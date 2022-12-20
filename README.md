@@ -112,6 +112,30 @@ Esta rota permite a busca dos veículos dentro dos pontos de interesse, por meio
 
 Retornando todas as posições de um determinado veículo que se encontram dentro das POIs.
 
+<details>/alldateplate</details>
+
+Esta rota permite a busca dos veículos dentro dos pontos de interesse, por meio de sua placa e data. A requisição de busca deve seguir o seguinte formato:
+
+{
+    lower: "2018-12-12 02:04:03",
+    upper: "2018-12-14 02:04:03",
+    plate: "TESTE001"
+}
+
+Retornando todas as posições de um determinado veículo que se encontram dentro das POIs.
+
+<details>/dateplate</details>
+
+Esta rota permite a busca dos veículos dentro dos pontos de interesse, por meio de sua placa e data. A requisição de busca deve seguir o seguinte formato:
+
+{
+    lower: "2018-12-12 02:04:03",
+    upper: "2018-12-14 02:04:03",
+    plate: "TESTE001"
+}
+
+Retornando todas os tempos e posições de um determinado veículo POIs.
+
 
  </details>
 
