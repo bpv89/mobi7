@@ -8,7 +8,7 @@ const findAll = async () => {
     }] });
     const onposition = vehicleposition.map((vehicle) => checkposition(vehicle, points)[0]);
     const filter = onposition.filter((ele) => typeof ele === 'object');
-    return { type: null, message: filter };
+    return { type: 200, message: filter };
   };
 
 

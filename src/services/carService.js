@@ -2,7 +2,7 @@ const { Cars }= require('../models');
 
 const findAll = async () => {
     const car = await Cars.findAll();
-    return { type: null, message: car };
+    return { type: 200, message: car };
   };
 
   const insertNew = async (placa) => {
@@ -10,9 +10,9 @@ const findAll = async () => {
     const { id } = car;
     console.log(id);
     if (created) {
-      return { type: null, message: `New car inserted with plate ${placa} and id ${id}` };
+      return { type: 201, message: `New car inserted with plate ${placa} and id ${id}` };
       };
-    return { type: null, message: `Car with plate ${placa} alredy registered` };
+    return { type: 204, message: `Car with plate ${placa} alredy registered` };
 
   };
 

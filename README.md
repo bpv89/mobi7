@@ -94,7 +94,7 @@ A entrada também permite a existência de apenas um unico parâmetro, caso seja
 Esta rota permite a busca dos veículos dentro dos pontos de interesse, por meio de sua placa. A requisição de busca deve seguir o seguinte formato:
 
 {
-    plate: "TESTE001"
+    placa: "TESTE001"
 }
 
 Retornando o tempo que o veiculo passou am cada POI.
@@ -107,7 +107,7 @@ Retornando o tempo que o veiculo passou am cada POI.
 Esta rota permite a busca dos veículos dentro dos pontos de interesse, por meio de sua placa. A requisição de busca deve seguir o seguinte formato:
 
 {
-    plate: "TESTE001"
+    placa: "TESTE001"
 }
 
 Retornando todas as posições de um determinado veículo que se encontram dentro das POIs.
@@ -119,7 +119,7 @@ Esta rota permite a busca dos veículos dentro dos pontos de interesse, por meio
 {
     lower: "2018-12-12 02:04:03",
     upper: "2018-12-14 02:04:03",
-    plate: "TESTE001"
+    placa: "TESTE001"
 }
 
 Retornando todas as posições de um determinado veículo que se encontram dentro das POIs.
@@ -131,7 +131,7 @@ Esta rota permite a busca dos veículos dentro dos pontos de interesse, por meio
 {
     lower: "2018-12-12 02:04:03",
     upper: "2018-12-14 02:04:03",
-    plate: "TESTE001"
+    placa: "TESTE001"
 }
 
 Retornando todas os tempos e posições de um determinado veículo POIs.

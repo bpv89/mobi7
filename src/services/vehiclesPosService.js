@@ -3,7 +3,7 @@ const { Cars, VehiclePos } = require('../models');
 
   const findAll = async () => {
     const car = await VehiclePos.findAll();
-    return { type: null, message: car };
+    return { type: 200, message: car };
   };
 
   const insertNew = async (position) => {
@@ -14,9 +14,9 @@ const { Cars, VehiclePos } = require('../models');
       defaults: { carId, velocidade, latitude, longitude, ignicao  }, raw: true});    
     const { id } = pos;
     if (created) {
-      return { type: null, message: `New car position inserted with plate ${placa} and id ${id}` };
+      return { type: 201, message: `New car position inserted with plate ${placa} and id ${id}` };
       };
-    return { type: null, message: `Car with plate ${placa} alredy registered on that date` };
+    return { type: 204, message: `Car with plate ${placa} alredy registered on that date` };
     };
 
   module.exports = { findAll, insertNew };
