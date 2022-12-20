@@ -3,9 +3,9 @@ const convertTime = require('./convertTime');
 const mapPoints = (cars) => {
     const vehicle = [];
     const carTimeByPoint = [];
-    // console.log(cars);
+
     cars.map((car, index)=> {
-      // posição inicial ou mudança de ponto com o veiculo anterior    
+  
       if (index === 0 || car.point !== cars[index - 1].point) {
         vehicle.push({...car, limit: 'inferior'})
       }
@@ -19,7 +19,6 @@ const mapPoints = (cars) => {
         vehicle.push({...car, limit: 'superior'})       
       }
     });
-    // console.log(vehicle);
 
     vehicle.map((car, index) => {
       if (car.limit === 'inferior' && vehicle[index + 1].limit === 'superior'){

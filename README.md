@@ -61,21 +61,20 @@ Esta rota possibilita a listagem dos posições dos veículos armazenados bem co
 
 
  </details>
- <strong>/time</strong>
+ <strong>/search</strong>
  <details> 
 
 Esta rota possibilita a listagem dos tempos dos veículos dentro de cada POI, ainda permitindo a filtragem por meio da data e da placa do veículo.
 <details>/
 
-    Aqui são listados todos os veiculos dentro dos POIs, as seguintes informações são passadas, conforme o modelo por todas as rotas:
+    Aqui são listados todos os veiculos, conforme a busca pela data, aceitando os dois parametros, ou apenas um deles: 
 
-    Id do veículo
-    Placa do veículo
-    Id do ponto
-    Nome do Ponto
-    Data de entrada no ponto
-    Data de saída do ponto
-    Tempo total gasto no ponto
+    {
+    lower: "2018-12-12 02:04:03",
+    upper: "2018-12-14 02:04:03"
+    }
+
+
 
 </details>
 <details>/date
@@ -83,10 +82,11 @@ Esta rota possibilita a listagem dos tempos dos veículos dentro de cada POI, ai
 Esta rota permite a busca da posição dos veículos dentro dos POIs, em determinada data, esta rota deve ser chamada com o seguinte parametro, dentro do corpo de requisição: 
 
 {
-    date: "2018-12-12 02:04:03"
+    lower: "2018-12-12 02:04:03",
+    upper: "2018-12-14 02:04:03"
 }
 
-A menor busca permitida esta relacionada com o ano, portando ela não aceita valores menores do que 4 cacacteres.
+A entrada também permite a existência de apenas um unico parâmetro, caso seja passado o parâmetro lower, sera exibido o todos os tempos por ponto, apos a data estabelecida. Caso o parâmetro enviado seja o upper, será devolvidos as datas abaixo do ponto. Caso ambos sejam enviados, a resposta estara com o tempo de permanencia dentro do range 
 
 </details>
 <details>/plate</details>
@@ -96,6 +96,21 @@ Esta rota permite a busca dos veículos dentro dos pontos de interesse, por meio
 {
     plate: "TESTE001"
 }
+
+Retornando o tempo que o veiculo passou am cada POI.
+
+
+ </details>
+
+<details>/allplate</details>
+
+Esta rota permite a busca dos veículos dentro dos pontos de interesse, por meio de sua placa. A requisição de busca deve seguir o seguinte formato:
+
+{
+    plate: "TESTE001"
+}
+
+Retornando todas as posições de um determinado veículo que se encontram dentro das POIs.
 
 
  </details>

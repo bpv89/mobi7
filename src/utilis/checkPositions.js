@@ -10,8 +10,7 @@ const checkPoint = (car, points ) => {
     points.map((point) => {
         const inPosition = checkPosition(car.latitude, car.longitude, point.latitude, point.longitude, point.raio);
         if (inPosition) {
-        const obj = { point: point.id, pointName: point.nome , vehiclePosId: car.id, carId: car.carId, date: car.dataPosicao };
-        // return obj;
+        const obj = { point: point.id, pointName: point.nome , vehiclePosId: car.id, carId: car.carId, placa: car['car.placa'] , date: car.dataPosicao };
         positions.push(obj); 
     } 
     });
